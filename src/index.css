@@ -1,0 +1,246 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: #030615;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./fonts/Anurati-Regular.otf') format('woff2'),
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  display: relative;
+}
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  width: 100%;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  object-fit: cover;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+}
+
+footer h2 {
+  font-size: 1.4rem;
+}
+
+footer h1 {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+footer button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 1rem;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+footer button i {
+  font-size: 1.3rem;
+}
+
+footer button:hover {
+  opacity: 0.7;
+}
+
+.bgGradient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, #030615, rgba(255, 255, 255, 0));
+}
+
+.loadingState {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Make the loading state div full height */
+  position: relative; right: -700px;
+}
+
+.loadingState > div {
+  margin: auto; /* Align spinner horizontally */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-auto-rows: 150px;
+  gap: 20px;
+  position: relative; margin-top: 20px; margin-left: 100px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.pagination button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #f23b26;
+  border-radius: 3px;
+}
+
+.pagination button.active {
+  background-color: #90271b;
+}
+
+.pagination {
+  margin: 25px 0 15px 0;
+}
+.pagination,
+.pagination li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+
+.mars-rover-inputs{
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.21);
+border-radius: 12px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+height: 360px;
+width: 1480px;
+position: absolute; margin-left: 20px; margin-top: 20px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.rover-container {
+  position: relative;
+  height: 1200px;
+}
+
+.rover_bg {
+  position: relative;
+  width: 1520px; /* Ensure the container takes the full width of its parent */
+  max-height: 400px; /* Set a maximum height for the background image */
+  overflow: hidden; /* Hide any overflow if the image exceeds the maximum height */
+}
+
+.rover_bg_img {
+  width: 250px; /* Make the image take the full width of its container */
+  height: auto; /* Maintain aspect ratio while resizing */
+  display: block; /* Ensure the image behaves like a block element */
+}
+
+.mars-rover-inputs-rover {
+width: 250px;
+background-color: white;
+border-radius: 4px;
+position: relative; margin-top: 200px; margin-left: 75px;
+}
+
+.mars-rover-inputs-camera {
+  width: 250px;
+  background-color: white;
+  border-radius: 4px;
+  position: relative; margin-top: -65px; margin-left: 425px;
+}
+
+.mars-rover-inputs-sol{
+  width: 250px;
+  height: 64px;
+  background-color: white;
+  border-radius: 4px;
+  position: relative; margin-top: -64px; margin-left: 775px;
+}
+
+.mars-rover-inputs-date{
+  width: 250px;
+  height: 64px;
+  background-color: white;
+  border-radius: 4px;
+  position: relative; margin-top: -64px; margin-left: 1125px;
+}
+
+.mars-rover-inputs .mars-rover-typo{
+  color: rgb(255, 255, 255);
+  font-family: 'CustomFont';
+  font-size: 30;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.mars-rover-inputs .mars-rover-des{
+  color: rgb(255, 255, 255);
+  font-family: 'arial';
+  font-size: large;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.no-content-message{
+  position: relative; top: 100px; left: 530px;
+}
+
+.mars-rover-inputs-info-icon{
+  position: relative; left: 1400px;
+}
+
+
+
+
+
